@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import 'bulmaswatch/superhero/bulmaswatch.min.css';
+import ReactDOM from 'react-dom';
+import CodeCell from './components/code-cell';
+import TextEditor from './components/text-editor';
+import {Provider} from "react-redux";
+import {store} from "./state";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Provider store={store}>
+            <div>
+                <TextEditor/>
+            </div>
+        </Provider>
+
+    );
+};
+
 
 export default App;
